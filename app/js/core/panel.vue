@@ -16,12 +16,10 @@ export default {
             default: ""
         }
     },
-    data(){
-        return {
-            panelClass: "panel"
-        }
+    data:{
+        panelClass: "panel"
     }    
-}
+};
 </script>
 <style lang="scss">
     @import "../../css/element.scss";

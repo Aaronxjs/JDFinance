@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -16,7 +16,7 @@ module.exports = env => {
       template: './app/views/index.html'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin() ,
     new VueLoaderPlugin()
   ];
   if (env.production) {
@@ -37,12 +37,16 @@ module.exports = env => {
       contentBase: './dist',
       hot: true,
       compress: true,
-      port: 9010,
+      port: 2000,
       clientLogLevel: "none",
       quiet: true
     },
     module: {
       rules: [{
+        test: /\.js$/,
+        include: path.resolve(__dirname, "src"),
+        loader: "babel-loader"
+      },{
         test: /\.html$/,
         use: ['cache-loader', 'html-loader']
       }, {
@@ -88,7 +92,8 @@ module.exports = env => {
       }, {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
-      }]
+      }
+    ]
     },
     resolve: {
       extensions: [

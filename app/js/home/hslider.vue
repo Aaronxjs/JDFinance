@@ -46,32 +46,23 @@ export default {
                 href: "home",
                 img: "//img12.360buyimg.com/jrpmobile/jfs/t1/520/34/950/3686/5b9239e3Eaaf5465c/8d8c35badacfc114.png?width=90&height=90",
                 title: "工资理财"
-            },{
-                href: "home",
-                img: "//img12.360buyimg.com/jrpmobile/jfs/t1/1216/39/659/4516/5b923b1cE5943d1c6/dabaf8b842f57eb9.png?width=90&height=90",
-                title: "众筹"
-            },{
-                href: "home",
-                img: "//img12.360buyimg.com/jrpmobile/jfs/t1/3924/28/657/3552/5b9240dbE60256c31/78b52d5ab675f800.png?width=90&height=90",
-                title: "租房"
-            },{
-                href: "home",
-                img: "//img12.360buyimg.com/jrpmobile/jfs/t1/479/25/929/9198/5b9243aaE826fc97b/37ef0a7cdfd24238.png?width=120&height=120",
-                title: "电影票"
             }]
         }
     }
-}
+};
 </script>
 <style lang="scss" module>
-    @import "../../css/element.css";
+    @import "../../css/element.scss";
     .slider{
         margin-top: 120px;
+        img{
+            width:100%;
+        }
     }
     .list{
         @include list(row);
         background: #fff;
-        padding-top: 120px;
+        padding-top: 20px;
         padding-bottom: 20px;
         justify-content: space-around;
         a{

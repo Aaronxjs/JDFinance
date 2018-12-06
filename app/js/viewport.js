@@ -76,7 +76,6 @@
     hotcss.mresize = function () {
         // 对，这个就是核心方法了，给HTML设置font-size。
         let innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth
-        console.log(innerWidth,hotcss.maxWidth,hotcss.dpr)
         if (hotcss.maxWidth && (innerWidth / hotcss.dpr > hotcss.maxWidth)) {
             innerWidth = hotcss.maxWidth * hotcss.dpr
         }
